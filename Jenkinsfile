@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Hello, I am running inside a Docker container on a remote machine!"'
+                sh '~~ echo "Hello, I am running inside a Docker container on a remote machine!"'
                 sh 'uname -a'
                 sh 'pwd'
             }
