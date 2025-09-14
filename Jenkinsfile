@@ -4,11 +4,11 @@ pipeline {
             image 'jenkins/inbound-agent:jdk17'
             args '-u root -v ${WORKSPACE}:/workspace'
         }
-        stages {
-            stage('Test') {
-                steps {
-                    sh 'docker version'
-                }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'docker version'
             }
         }
     }
