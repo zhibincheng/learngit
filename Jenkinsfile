@@ -1,8 +1,16 @@
 pipeline {
     agent {
-        docker {
-            image 'jenkins/inbound-agent:jdk17'
-            args '-u root -v ${WORKSPACE}:/workspace'
+        // 这里用Docker Cloud中, 配置好的Agent模版即可
+        // image用什么是在这里面配置的
+        label 'docker-agent' 
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Hello, I am running inside a Docker container on a remote machine!"'
+                sh 'uname -a'
+                sh 'pwd'
+            }
         }
     }
     stages {
